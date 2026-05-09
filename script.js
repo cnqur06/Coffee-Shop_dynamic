@@ -255,6 +255,7 @@ function handleSignup(e) {
     showFormMessage(e.target, "Signup successful for " + username + ". You can now log in with this email.", true);
 }
 
+// omar al-raies
 function showFormMessage(form, message, isSuccess) {
     var messageBox = form.querySelector(".form-message");
 
@@ -268,7 +269,12 @@ function showFormMessage(form, message, isSuccess) {
     messageBox.classList.toggle("success", isSuccess);
     messageBox.classList.toggle("error", !isSuccess);
 }
-
+window.addEventListener("load", function() {
+    cart.load();
+    displayGreeting();
+    setupMenuPage();
+    setupFormValidation();
+});
 document.addEventListener("click", function(e) {
     var orderButton = e.target.closest(".order-btn");
     var cartButton = e.target.closest("[data-cart-action]");
@@ -291,11 +297,4 @@ document.addEventListener("click", function(e) {
         if (action === "decrease") cart.changeQuantity(productId, -1);
         if (action === "remove") cart.remove(productId);
     }
-});
-
-window.addEventListener("load", function() {
-    cart.load();
-    displayGreeting();
-    setupMenuPage();
-    setupFormValidation();
 });
