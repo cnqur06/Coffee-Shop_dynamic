@@ -1,11 +1,13 @@
-// Demo users for login and signup validation.
+// ali yousri
 var users = [
     { username: "user1", email: "user1@coffee.com", password: "user123" },
     { username: "user2", email: "user2@coffee.com", password: "user123" },
     { username: "user3", email: "user3@coffee.com", password: "user123" }
 ];
 
+// cart object is divided for 2 colleagues, omar khaled and ali yousri 
 var cart = {
+    // omar khaled
     items: {},
 
     add: function(product) {
@@ -42,7 +44,7 @@ var cart = {
         this.save();
         renderCart();
     },
-
+    // ali youssri
     total: function() {
         return Object.values(this.items).reduce(function(sum, item) {
             return sum + item.price * item.quantity;
@@ -64,7 +66,7 @@ var cart = {
         this.items = savedCart ? JSON.parse(savedCart) : {};
     }
 };
-
+// ali yousri last part
 var products = [];
 
 function displayGreeting() {
@@ -80,6 +82,8 @@ function displayGreeting() {
     greeting.textContent = msg + " Welcome to Coffee & Friends";
     header.parentNode.insertBefore(greeting, header.nextSibling);
 }
+
+// omar el-ghamri
 
 function setupMenuPage() {
     var menuPage = document.querySelector(".menu-page");
@@ -122,6 +126,7 @@ function buildProductsFromCards() {
     });
 }
 
+// omar ehab 
 function insertMenuTools(menuNav) {
     if (document.querySelector(".menu-tools")) return;
 
@@ -158,7 +163,7 @@ function setupMenuSearch() {
         });
     });
 }
-
+// omar hakim 
 function renderCart() {
     var cartItems = document.getElementById("cart-items");
     var cartTotal = document.getElementById("cart-total");
@@ -194,6 +199,7 @@ function renderCart() {
     cartTotal.textContent = "EGP " + cart.total();
 }
 
+// ali soliman 
 function setupFormValidation() {
     var loginForm = document.querySelector("#username1") ? document.querySelector("#username1").closest("form") : null;
     var signupForm = document.querySelector("#fullname") ? document.querySelector("#fullname").closest("form") : null;
@@ -206,6 +212,7 @@ function setupFormValidation() {
         signupForm.addEventListener("submit", handleSignup);
     }
 }
+
 
 function handleLogin(e) {
     e.preventDefault();
@@ -222,7 +229,7 @@ function handleLogin(e) {
         Boolean(foundUser)
     );
 }
-
+// omar karam 
 function handleSignup(e) {
     e.preventDefault();
 
